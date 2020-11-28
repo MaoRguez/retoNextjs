@@ -1,18 +1,25 @@
 import styled from 'styled-components';
 
 export const ContainerSlider = styled.section`
-  text-align: center;
-  margin: 60px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  @media screen and (max-width: 426px) {
+    height: 410px;
+  }
 `;
 
 export const ContainerImage = styled.div`
   width: 400px;
   height: 400px;
-  margin: 0 auto;
   @media screen and (max-width: 426px) {
     width: 318px;
     height: 318px;
-    margin: 0 auto;
+  }
+  @media screen and (max-width: 376px) {
+    width: 310px;
+    height: 310px;
   }
 `;
 
@@ -23,8 +30,14 @@ export const ImageCharacter = styled.img`
   @media screen and (max-width: 426px) {
     width: 310px;
     height: 310px;
+    margin-left: 15px;
+  }
+  @media screen and (max-width: 376px) {
+    width: 280px;
+    height: 280px;
   }
 `;
 
 export const Name = styled.h2`
+  text-align: center;
 `;
