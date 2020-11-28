@@ -1,3 +1,4 @@
+import React from  'react';
 import Head from 'next/head'
 import styled from 'styled-components';
 import Layout from '../components/Layout/Layout';
@@ -25,11 +26,11 @@ export default function Home() {
         <title>Rick and Morty</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <Master>
-          <Main />
-        </Master>
-      </Layout>
+        <Layout>
+          <Master theme>
+            <Main />
+          </Master>
+        </Layout>
     </Wrapper>
   )
 }
