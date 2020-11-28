@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import {
+  Container,
+  MainCharacter,
+  Image,
+  Description,
+  SubTitle,
+  Paragraph,
+} from './styles/Main';
 
 const Main = () => {
   const [characters, setCharacters] = useState([]);
@@ -13,37 +20,22 @@ const Main = () => {
     getCharacters();
   }, []);
 
-  const Container = styled.section`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5rem 0;
-  `;
-  const MainCharacter = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  `;
-  const Image = styled.img`
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-  `;
-  const Description = styled.div`
-    margin-left: 10px;
-  `;
-
   return (
     <Container>
       {characters.map(character => (
         <MainCharacter key={character.id}>
           <Image src={character.image} alt="character" />
           <Description>
-            <h2>Name: {character.name}</h2>
-            <p>Status: {character.status}</p>
-            <p>Gender: {character.gender}</p>
-            <p>Species: {character.species}</p>
+            <SubTitle>Name: {character.name}</SubTitle>
+            <Paragraph>
+              <strong>Status:</strong> {character.status}
+            </Paragraph>
+            <Paragraph>
+              <strong>Gender:</strong> {character.gender}
+            </Paragraph>
+            <Paragraph>
+              <strong>Species:</strong> {character.species}
+            </Paragraph>
           </Description>
         </MainCharacter>
       ))}

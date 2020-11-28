@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
+import {
+  ContainerSlider,
+  ContainerImage,
+  ImageCharacter,
+  Name,
+} from './styles/Slider';
 
 const MainSlider = () => {
   const [characters, setCharacters] = useState([]);
@@ -17,22 +23,27 @@ const MainSlider = () => {
       setCount((count) => {
         return characters.length < count + 2 ? 0 : count + 1;
       });
-    }, 6000);
+    }, 9000);
   }, []);
 
   return (
     <Layout>
-      <section>
+      <ContainerSlider>
         {characters.map((character, index) => {
-          if (count === index)
+          if (count == index)
             return(
-              <div key={index}>
-                <img src={character.image} alt="character" />
-                <h2>{character.name}</h2>
-              </div>
+              <ContainerImage
+                key={index}
+              >
+                <ImageCharacter
+                  src={character.image}
+                  alt="character"
+                />
+                <Name>{character.name}</Name>
+              </ContainerImage>
             );
         })}
-      </section>
+      </ContainerSlider>
     </Layout>
   );
 };
